@@ -5,5 +5,8 @@ I have been an on and off soccer fan ever I first started playing FIFA in 2012. 
 Some of the questions that I'm looking to answer with this dataset are listed below:
 - What is the highest rated movie?
 - Which year has the highest average rating?
+- What movies has the most critic/user reviews?
+
+
 
 
