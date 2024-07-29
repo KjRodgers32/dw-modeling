@@ -9,6 +9,6 @@ Some of the questions that I'm looking to answer with this dataset are listed be
 - Which year has the highest average rating?
 - What movies has the most critic/user reviews?
 
-
-
+## Take a look at how the data is modeled from the source
+<img src="https://i.imgur.com/Yf7aZEb.png" style="height: 500px; width: 700px;">
 
