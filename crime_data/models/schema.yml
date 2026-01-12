@@ -1,0 +1,19 @@
+models:
+  - name: raw_crime_data
+    description: |
+      This table contains the raw crimes data from source with the names more user friendly for later cleaning.
+      This model will also contains more data tests to enure we have good data at the start.
+    columns:
+      - name: record_id
+        description: This is a unique key for this source data. A surrogate key of 2 digit year, area id and 5 digits
+        tests:
+          - not_null
+          - unique
+      - name: date_reported
+        description: This is the date the crime was reported
+        data_tests:
+          - test_is_date
+      - name: date_occurred
+        description: This is the date the crime occurred
+        data_tests:
+          - test_is_date

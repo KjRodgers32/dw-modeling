@@ -1,0 +1,18 @@
+unit_tests:
+  - name: test_macro_convert_military_time
+    model: test_macro_convert_military_time
+    given:
+      - input: ref('macro_input')
+        format: sql
+        rows: |
+          select 123 as time union all
+          select 1 as time union all
+          select 54 as time union all
+          select 2045 as time
+      
+    expect:
+      rows:
+        - {time: 123, output: '01:23'}
+        - {time: 1, output: '00:01'}
+        - {time: 54, output: '00:54'}
+        - {time: 2045, output: '20:45'}

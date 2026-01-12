@@ -1,0 +1,6 @@
+sources:
+  - name: crime_data
+    database: dbt_modeling
+    schema: default
+    tables:
+      - name: crime_data_from_2020_to_present
