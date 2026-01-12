@@ -1,5 +1,5 @@
 ## Data Warehouse Modeling
-This repo is where I will model and upload data to my Snowflake Data Warehouse with DBT.
+This repo is where I will model and upload data to my Snowflake/Databricks Data Warehouse with DBT.
 
 ## But Why
 I find it fun :). I also use this as an opportunity to keep learning and growing my understanding of Data Warehouses and working with the various tools used to interact with them.
