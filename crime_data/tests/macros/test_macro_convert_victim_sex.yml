@@ -1,0 +1,15 @@
+unit_tests:
+  - name: test_macro_convert_victim_sex
+    model: test_macro_convert_victim_sex
+    given:
+      - input: ref('macro_input')
+        format: sql
+        rows: |
+          select 'M' as sex union all
+          select 'F' as sex union all
+          select 'X' as sex
+    expect:
+      rows:
+        - {sex: 'M', output: 'Male'}
+        - {sex: 'F', output: 'Female'}
+        - {sex: 'X', output: 'Unknown'}

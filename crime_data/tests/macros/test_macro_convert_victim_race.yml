@@ -1,0 +1,47 @@
+unit_tests:
+  - name: test_macro_convert_victim_race
+    model: test_macro_convert_victim_race
+    given:
+      - input: ref('macro_input')
+        format: sql
+        rows: |
+          select 'A' as race union all 
+          select 'B' as race union all 
+          select 'C' as race union all 
+          select 'D' as race union all 
+          select 'F' as race union all 
+          select 'G' as race union all 
+          select 'H' as race union all 
+          select 'I' as race union all 
+          select 'J' as race union all 
+          select 'K' as race union all 
+          select 'L' as race union all 
+          select 'O' as race union all 
+          select 'P' as race union all 
+          select 'S' as race union all 
+          select 'U' as race union all 
+          select 'V' as race union all 
+          select 'W' as race union all 
+          select 'X' as race union all 
+          select 'Z' as race
+    expect:
+      rows:
+        - {race: 'A', output: 'Other Asian'}
+        - {race: 'B', output: 'Black'}
+        - {race: 'C', output: 'Chinese'}
+        - {race: 'D', output: 'Cambodian'}
+        - {race: 'F', output: 'Filipino'}
+        - {race: 'G', output: 'Guamanian'}
+        - {race: 'H', output: 'Hispanic/Latin/Mexican'}
+        - {race: 'I', output: 'American/Indian/Alaskan Native'}
+        - {race: 'J', output: 'Japanese'}
+        - {race: 'K', output: 'Korean'}
+        - {race: 'L', output: 'Laotian'}
+        - {race: 'O', output: 'Other'}
+        - {race: 'P', output: 'Pacific Islander'}
+        - {race: 'S', output: 'Samoan'}
+        - {race: 'U', output: 'Hawaiian'}
+        - {race: 'V', output: 'Vietnamese'}
+        - {race: 'W', output: 'White'}
+        - {race: 'X', output: 'Unknow'}
+        - {race: 'Z', output: 'Asian Indian'}
