@@ -1,5 +1,3 @@
-{{ config(marterialized='test') }}
-
 with victim_race as (
     select
       {{ convert_victim_race('race') }} as output

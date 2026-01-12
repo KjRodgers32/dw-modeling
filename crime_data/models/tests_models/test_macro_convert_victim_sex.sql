@@ -1,5 +1,3 @@
-{{ config(marterialized='test') }}
-
 with victim_sex as (
     select
       {{ convert_victim_sex('sex') }} as output
