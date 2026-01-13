@@ -17,3 +17,79 @@ models:
         description: This is the date the crime occurred
         data_tests:
           - test_is_date
+      - name: time_occurred
+        description: This is the time the crime occurred in military time as an integer
+      - name: geographical_area
+        description: |
+          The LAPD has 21 Community Police Stations referred to as Geographic Areas within the department.
+          These Geographic Areas are sequentially numbered from 1-21.
+      - name: geographical_area_name
+        description: |
+          The 21 Geographic Areas or Patrol Divisions are also given a name designation that references a landmark or the surrounding community that it is responsible for.
+          For example 77th Street Division is located at the intersection of South Broadway and 77th Street, serving neighborhoods in South Los Angeles
+      - name: sub_geographical_area
+        description: |
+          A four-digit code that represents a sub-area within a Geographic Area.
+          All crime records reference the "RD" that it occurred in for statistical comparisons.
+      - name: crime_code
+        description: 	Indicates the crime committed
+      - name: crime_code_description
+        description: Defines the Crime Code provided.
+      - name: mo_codes
+        description: |
+          Modus Operandi. Activities associated with the suspect in commission of the crime.See attached PDF for list of MO Codes in numerical order.
+      - name: victim_age
+        description: Age of the victim at the time of the crime.
+      - name: victim_sex
+        description: Sex of the victim at the time of the crime.
+      - name: victim_sex_description
+        description: Enum of the victim sex
+      - name: victim_race
+        description: |
+          A - Other Asian B - Black C - Chinese D - Cambodian F - Filipino G - Guamanian H - Hispanic/Latin/Mexican I - American Indian/Alaskan Native 
+          J - Japanese K - Korean L - Laotian O - Other P - Pacific Islander S - Samoan U - Hawaiian V - Vietnamese W - White X - Unknown Z - Asian Indian
+      - name: victim_race_description
+        description: Description of the victim race.
+      - name: premise_code
+        description: The type of structure, vehicle, or location where the crime took place.
+      - name: premise_code_description
+        description: Description of the premise code.
+      - name: weapon_used_code
+        description: Code for the type of weapon used in the crime.
+      - name: weapon_used_code_description
+        description: Description of the weapon used code.
+      - name: status
+        description: Status of the case. (IC is the default)
+      - name: status_description
+        description: Description of the status code.
+      - name: crime_code_1
+        description: |
+          Indicates the crime committed. Crime Code 1 is the primary and most serious one.
+          Crime Code 2, 3, and 4 are respectively less serious offenses. Lower crime class numbers are more serious.
+      - name: crime_code_2
+        description: May contain a code for an additional crime, less serious than Crime Code 1.
+      - name: crime_code_3
+        description: May contain a code for an additional crime, less serious than Crime Code 1.
+      - name: crime_code_4
+        description: May contain a code for an additional crime, less serious than Crime Code 1.
+      - name: location
+        description: Street address of crime incident rounded to the nearest hundred block to maintain anonymity.
+      - name: latitude
+        description: Latitude coordinate of the crime incident.
+      - name: longitude
+        description: Longitude coordinate of the crime incident.
+  - name: test_macro_convert_military_time
+    description: This model is to test the macro that converts an integer from the source data to military time.
+    columns:
+      - name: output
+        description: This is a string in military format HHMM
+  - name: test_macro_convert_victim_race
+    description: This model is to test the macro that converts the victim abbreviation from the source data to the full race
+    columns:
+      - name: output
+        description: This is the full race
+  - name: test_macro_convert_victim_sex
+    description: This model is to test the macro that converts the victim sex abbreviation from the source data to the full sex
+    columns:
+      - name: output
+        description: This is the full race

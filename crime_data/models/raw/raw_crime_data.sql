@@ -5,7 +5,7 @@ with renamed_raw_claims_columns as (
       , try_to_date(`DATE OCC`, 'MM/dd/yyyy hh:mm:ss a') as date_occurred
       , {{ convert_military_time('`TIME OCC`') }} as time_occurred
       , area as geographical_area
-      , trim(`AREA NAME`) as area_name
+      , trim(`AREA NAME`) as geographical_area_name
       , lpad(trim(`Rpt Dist No`), 4, '0') as sub_geographical_area
       , `Crm Cd` as crime_code
       , trim(`Crm Cd Desc`) as crime_code_description
@@ -18,7 +18,7 @@ with renamed_raw_claims_columns as (
       , `Premis Cd` as premise_code
       , trim(`Premis Desc`) as premise_code_description
       , `Weapon Used Cd` as weapon_used_code
-      , trim(`Weapon Desc`) as weapone_used_code_description
+      , trim(`Weapon Desc`) as weapon_used_code_description
       , trim(status) as status
       , trim(`Status Desc`) as status_description
       , `Crm Cd 1` as crime_code_1
